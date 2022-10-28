@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+	<body>
+		<div class="card">
+			<h2 class="card__title">Login</h2>
+			<% if(status === "username or email error") { %>
+			<p class="card__hidden-text">
+				Please enter your username or email address
+			</p>
+			<% } else if (status === "password error") { %>
+			<p class="card__hidden-text">Please enter your password</p>
+			<% } else if (status === "Username or email address doesn't exist")
+			{ %>
+			<p class="card__hidden-text">
+				Username or email address doesn't exist
+			</p>
+			<% } else if (status === "Incorrect password") { %>
+			<p class="card__hidden-text">Incorrect password</p>
+			<% } %>
+			<form action="/app" method="post">
+				<div class="card__user-name">
+					<label class="card__detail" for="user-name">username</label>
+					<input
+						class="card__input"
+						type="text"
+						id="user_name"
+						name="user_name"
+						placeholder="Username or Email"
+					/>
+				</div>
+				<div class="card__password">
+					<label class="card__detail" for="password"></label>
+					<input
+						class="card__input"
+						type="password"
+						id="password"
+						name="password"
+						placeholder="Password"
+					/>
+				</div>
+				<button class="card__btn" type="submit">Log in</button>
+			</form>
+			<p class="card__text">
+				Don’t have an account? &nbsp<a
+					class="card__sign-up"
+					href="/sign-up"
+					><strong>Sign up</strong></a
+				>
+			</p>
+		</div>
+	</body>
+</html>

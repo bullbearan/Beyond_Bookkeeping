@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/nav.css" />
+		<link rel="stylesheet" href="css/savings.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"
+			integrity="sha512-d6nObkPJgV791iTGuBoVC9Aa2iecqzJRE0Jiqvk85BhLHAPhWqkuBiQb1xz2jvuHNqHLYoN3ymPfpiB1o+Zgpw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+	</head>
+	<body>
+		<%- include("partials/nav.ejs") %>
+		<div class="left">
+			<p class="left__salary">Your Salary: $<%= userSalary %></p>
+			<p class="left__savings">Your Savings: $<%= savings %></p>
+		</div>
+		<div class="bottom">
+			<p class="bottom__title">
+				Here's how much you need to save monthly to reach your goal
+			</p>
+			<% if (status === "ok") { %> <% for (const post of
+				goals) { const width = post.curr_amount /
+				post.goal_price * 100 * 3; let period = post.goal_period - (new Date().getMonth() + 1); if (period < 0) period += 12 %>
+			<div class="bottom__goal-container">
+				<div class="bottom__goal">
+					<h3 class="goal__title"><%= post.goal_name %></h3>
+					<div class="goal__progress-outer">
+						<div class="goal__progress-inner" style="width: <%= width %>px"></div>
+					</div>
+					<div class="goal__amount-container">
+						<p class="goal__curr">$<%= post.curr_amount %></p>
+						<p class="goal__max">$<%= post.goal_price %></p>
+					</div>
+				</div>
+				<p class="bottom__savings">
+					You will need to save <strong>$<%= post.goal_monthly_savings %></strong> monthly over the
+					course of <strong><%= period %></strong> months to buy a laptop.
+				</p>
+			</div>
+			<% } %> <% } %>
+		</div>
+	</body>
+</html>

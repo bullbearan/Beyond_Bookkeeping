@@ -1,0 +1,106 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	width: 500px;
+	height: 360px;
+	padding: 0 39px;
+	border-radius: 15px;
+	box-shadow: 0 0 5px hsl(0, 0%, 0%, 25%);
+	position: relative;
+}
+
+.card__title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 45px;
+}
+
+.card__hidden-text {
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	color: red;
+	text-align: center;
+	width: 422px;
+	position: absolute;
+	top: 21%;
+}
+
+.card__user-name,
+.card__password,
+.card__btn,
+.card__text {
+	margin-top: 25px;
+}
+
+.card__user-name {
+	padding-top: 20px;
+}
+
+.card__detail {
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	overflow: hidden;
+}
+
+.card__input {
+	font-size: 16px;
+	font-weight: 500;
+	width: 423px;
+	height: 40px;
+	border: none;
+	border-radius: 7.5px;
+	box-shadow: 0 0 3.75px 1px hsl(0, 0%, 0%, 25%);
+	text-indent: 17px;
+}
+
+.card__input::placeholder {
+	font-size: 15px;
+	font-weight: 500;
+	color: #8c8c8c;
+}
+
+.card__input:focus {
+	outline: none;
+}
+
+.card__btn {
+	font-size: 18px;
+	font-weight: 600;
+	color: white;
+	background-color: #2ba30e;
+	width: 423px;
+	height: 40px;
+	border: none;
+	border-radius: 7.5px;
+	box-shadow: 0 2px 4.5px hsl(0, 0%, 0%, 25%);
+	cursor: pointer;
+}
+
+.card__text {
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.card__sign-up {
+	color: #2ba30e;
+	text-decoration: none;
+}

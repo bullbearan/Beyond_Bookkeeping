@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sign up</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/sign_up.css" />
+	</head>
+	<body>
+		<div class="card">
+			<h2 class="card__title">Create an account</h2>
+			<% if(status === "fname error") { %>
+			<p class="card__hidden-text">Please enter your first name</p>
+			<% } else if (status === "email error") { %>
+			<p class="card__hidden-text">Please enter your email</p>
+			<% } else if (status === "password error") { %>
+			<p class="card__hidden-text">Please enter your password</p>
+			<% } else if (status === "conf password error") { %>
+			<p class="card__hidden-text">Please enter your password again</p>
+			<% } else if (status === "user exists") { %>
+			<p class="card__hidden-text">User name is already taken</p>
+			<% } else if (status === "email exists") { %>
+			<p class="card__hidden-text">Email address is already registered</p>
+			<% } else if (status === "password length < 5") { %>
+			<p class="card__hidden-text">Please enter 5 characters or more</p>
+			<% } else if (status === "password does not match") { %>
+			<p class="card__hidden-text">
+				The password you entered does not match
+			</p>
+			<% } else if (status === "email not valid") { %>
+			<p class="card__hidden-text">
+				Email is not valid
+			</p>	
+			<% } %>
+			<form action="/Welcome" method="post">
+				<div class="card__user-name">
+					<label
+						class="card__detail card__detail--username"
+						for="fname"
+						>User name</label
+					>
+					<input
+						class="card__input card__user-name-input"
+						type="text"
+						id="fname"
+						name="fname"
+						placeholder="First Name"
+					/>
+					<input
+						class="card__input card__user-name-input"
+						type="text"
+						id="lname"
+						name="lname"
+						placeholder="Last Name (optional)"
+					/>
+				</div>
+				<div class="card__email-address">
+					<label class="card__detail" for="email"
+						>Email address</label
+					>
+					<input
+						class="card__input"
+						type="text"
+						id="email"
+						name="email"
+						placeholder="name@example.com"
+					/>
+				</div>
+				<div class="card__password">
+					<label class="card__detail" for="password">Password</label>
+					<input
+						class="card__input"
+						type="password"
+						id="password"
+						name="password"
+						placeholder="5+ characters"
+					/>
+				</div>
+				<div class="card__confirm">
+					<label class="card__detail" for="conf-password"
+						>Confirm password</label
+					>
+					<input
+						class="card__input"
+						type="password"
+						id="conf-password"
+						name="conf_password"
+						placeholder="Confirm 5+ characters"
+					/>
+				</div>
+				<button class="card__btn" type="submit">Sign up</button>
+			</form>
+			<p class="card__text">
+				Already have an account? &nbsp<a
+					class="card__log-in"
+					href="/login"
+					><strong>Log in</strong></a
+				>
+			</p>
+		</div>
+	</body>
+</html>

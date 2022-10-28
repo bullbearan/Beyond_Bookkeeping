@@ -1,0 +1,76 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.hero-container {
+	width: 471px;
+	height: 433px;
+	margin: 179px 0 0 71px;
+	display: inline-block;
+}
+
+.hero-container__name {
+	font-size: 24px;
+	font-weight: 600;
+	color: #494949;
+}
+
+.hero-container__title {
+	font-size: 48px;
+	font-weight: bold;
+	color: #2ba30e;
+	margin-top: 70px;
+}
+
+.hero-container__tagline {
+	font-size: 18px;
+	margin-top: 42px;
+}
+
+aside {
+	width: 670.93px;
+	height: 723.33px;
+	margin: 107px 0 0 145px;
+	position: absolute;
+	display: inline-block;
+}
+
+.aside__papers-illus {
+	position: absolute;
+	top: -60px;
+	right: 0;
+}
+
+.hero-container__btn {
+	font-size: 20px;
+	font-weight: 600;
+	text-decoration: none;
+	width: 166px;
+	height: 50px;
+	margin-top: 59px;
+	border: 3px solid #2ba30e;
+	border-radius: 50px;
+	box-shadow: 0 0 5px hsl(0, 0%, 0%, 25%);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-container__btn--primary {
+	background-color: #2ba30e;
+	color: white;
+	margin-right: 28px;
+}
+
+.hero-container__btn--secondary {
+	background-color: white;
+	color: #2ba30e;
+}

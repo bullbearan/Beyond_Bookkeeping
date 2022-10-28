@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/nav.css" />
+		<link rel="stylesheet" href="css/app.css" />
+		<link rel="stylesheet" href="css/app_hidden.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"
+			integrity="sha512-d6nObkPJgV791iTGuBoVC9Aa2iecqzJRE0Jiqvk85BhLHAPhWqkuBiQb1xz2jvuHNqHLYoN3ymPfpiB1o+Zgpw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script defer src="js/doughnutc_chart.js"></script>
+		<script defer src="js/bar_chart.js"></script>
+		<script defer src="js/app_hidden.js"></script>
+	</head>
+	<body>
+		<%- include("partials/nav.ejs") %>
+		<div
+			id="hidden-background"
+			class="hidden-background"
+			style="visibility: hidden"
+		></div>
+		<div class="app">
+			<button
+				id="edit-salary-expenses-btn"
+				class="app__edit-salary-btn"
+				type="button"
+			>
+				<svg
+					width="37"
+					height="37"
+					viewBox="0 0 37 37"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M31.6782 5.32178C31.8992 5.54257 32.0746 5.80476 32.1942 6.09336C32.3139 6.38196 32.3754 6.69132 32.3754 7.00374C32.3754 7.31616 32.3139 7.62552 32.1942 7.91412C32.0746 8.20272 31.8992 8.46491 31.6782 8.6857L19.906 20.4579L14.8601 22.1398L16.5421 17.0939L28.3143 5.32178C28.535 5.10074 28.7972 4.92538 29.0858 4.80574C29.3744 4.68609 29.6838 4.62451 29.9962 4.62451C30.3086 4.62451 30.618 4.68609 30.9066 4.80574C31.1952 4.92538 31.4574 5.10074 31.6782 5.32178ZM6.16667 32.3749H29.2917C29.7005 32.3749 30.0927 32.2125 30.3818 31.9234C30.6709 31.6343 30.8333 31.2422 30.8333 30.8333V18.4999C30.8333 18.0911 30.6709 17.6989 30.3818 17.4098C30.0927 17.1207 29.7005 16.9583 29.2917 16.9583C28.8828 16.9583 28.4907 17.1207 28.2015 17.4098C27.9124 17.6989 27.75 18.0911 27.75 18.4999V29.2916H7.70833V9.24995H18.5C18.9089 9.24995 19.301 9.08752 19.5901 8.7984C19.8792 8.50929 20.0417 8.11716 20.0417 7.70828C20.0417 7.29941 19.8792 6.90728 19.5901 6.61816C19.301 6.32904 18.9089 6.16661 18.5 6.16661H6.16667C5.75779 6.16661 5.36566 6.32904 5.07654 6.61816C4.78743 6.90728 4.625 7.29941 4.625 7.70828V30.8333C4.625 31.2422 4.78743 31.6343 5.07654 31.9234C5.36566 32.2125 5.75779 32.3749 6.16667 32.3749Z"
+						fill="black"
+					/>
+				</svg>
+				Edit salary or expenses
+			</button>
+			<div class="app__charts-and-goals-container">
+				<div class="app__doughnut-chart-container">
+					<canvas id="myDoughnutChart"></canvas>
+					<p class="app__doughnut-amount">$<%= postsSum %></p>
+					<p class="app__doughnut-total">Total Expenses</p>
+				</div>
+				<div class="app__bar-chart-container">
+					<canvas id="myBarChart"></canvas>
+				</div>
+				<div class="app__goals-outer-container">
+					<div class="app__goals-text-and-btn-container">
+						<h2 class="app__goals-text">Goals</h2>
+						<button id="goal-btn" class="app__goals-btn">
+							<svg
+								width="12"
+								height="12"
+								viewBox="0 0 12 12"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g clip-path="url(#clip0_184_305)">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M0.375 6.375V5.625H11.625V6.375H0.375Z"
+										fill="black"
+									/>
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6.375 11.625H5.625V0.375H6.375V11.625Z"
+										fill="black"
+									/>
+								</g>
+								<defs>
+									<clipPath id="clip0_184_305">
+										<rect
+											width="12"
+											height="12"
+											fill="white"
+										/>
+									</clipPath>
+								</defs>
+							</svg>
+							add a goal
+						</button>
+						<button id="editGoalBtn" class="goal__edit" type="submit">
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 37 37"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M31.6782 5.32178C31.8992 5.54257 32.0746 5.80476 32.1942 6.09336C32.3139 6.38196 32.3754 6.69132 32.3754 7.00374C32.3754 7.31616 32.3139 7.62552 32.1942 7.91412C32.0746 8.20272 31.8992 8.46491 31.6782 8.6857L19.906 20.4579L14.8601 22.1398L16.5421 17.0939L28.3143 5.32178C28.535 5.10074 28.7972 4.92538 29.0858 4.80574C29.3744 4.68609 29.6838 4.62451 29.9962 4.62451C30.3086 4.62451 30.618 4.68609 30.9066 4.80574C31.1952 4.92538 31.4574 5.10074 31.6782 5.32178ZM6.16667 32.3749H29.2917C29.7005 32.3749 30.0927 32.2125 30.3818 31.9234C30.6709 31.6343 30.8333 31.2422 30.8333 30.8333V18.4999C30.8333 18.0911 30.6709 17.6989 30.3818 17.4098C30.0927 17.1207 29.7005 16.9583 29.2917 16.9583C28.8828 16.9583 28.4907 17.1207 28.2015 17.4098C27.9124 17.6989 27.75 18.0911 27.75 18.4999V29.2916H7.70833V9.24995H18.5C18.9089 9.24995 19.301 9.08752 19.5901 8.7984C19.8792 8.50929 20.0417 8.11716 20.0417 7.70828C20.0417 7.29941 19.8792 6.90728 19.5901 6.61816C19.301 6.32904 18.9089 6.16661 18.5 6.16661H6.16667C5.75779 6.16661 5.36566 6.32904 5.07654 6.61816C4.78743 6.90728 4.625 7.29941 4.625 7.70828V30.8333C4.625 31.2422 4.78743 31.6343 5.07654 31.9234C5.36566 32.2125 5.75779 32.3749 6.16667 32.3749Z"
+									fill="black"
+								></path>
+							</svg>
+							Edit a goal
+						</button>
+					</div>
+					<div class="app__goals-inner-container">
+						<% if (status === "ok") { %> <% for (const post of
+						goals) { const width = post.curr_amount /
+						post.goal_price * 100 * 3%>
+						<div class="goal-inside">
+							<div class="con">
+							<h3 class="goal__title"><%= post.goal_name %></h3>
+							</div>
+							<div class="goal__progress-outer">
+								<div
+									class="goal__progress-inner"
+									style="width: <%= width %>px"
+								></div>
+							</div>
+							<div class="goal__amount-container">
+								<p class="goal__curr">
+									$<%= post.curr_amount %>
+								</p>
+								<p class="goal__max">$<%= post.goal_price %></p>
+							</div>
+						</div>
+						<% } %> <% } %>
+					</div>
+				</div>
+			</div>
+			<div class="app__expenses-catagories">
+				<p class="app__expenses-category">Housing</p>
+				<span class="app__housing-color"></span>
+				<p class="app__expenses-category">Utilities</p>
+				<span class="app__utilities-color"></span>
+				<p class="app__expenses-category">Transportation</p>
+				<span class="app__transportation-color"></span>
+				<p class="app__expenses-category">Food</p>
+				<span class="app__food-color"></span>
+				<p class="app__expenses-category">Grocories</p>
+				<span class="app__grocories-color"></span>
+				<p class="app__expenses-category">Entertainment</p>
+				<span class="app__entertainment-color"></span>
+				<p class="app__expenses-category">Healthcare</p>
+				<span class="app__healthcare-color"></span>
+				<p class="app__expenses-category">Others</p>
+				<span class="app__others-color"></span>
+			</div>
+		</div>
+		<div id="hidden-goal" class="goal" style="visibility: hidden">
+			<form action="/goals" method="post">
+				<div class="title-container">
+					<label class="title" for="title">Your goal?</label>
+					<input
+						class="goal__input"
+						type="text"
+						id="title"
+						name="title"
+					/>
+				</div>
+				<div class="amount-container">
+					<label class="amount" for="amount"
+						>How much does your goal cost?</label
+					>
+					<input
+						class="goal__input"
+						type="number"
+						id="amount"
+						name="amount"
+					/>
+				</div>
+				<div class="current-amount-container">
+					<label class="amount" for="current"
+						>How much you currently have saved up for your
+						goal?</label
+					>
+					<input
+						class="goal__input"
+						type="number"
+						id="current"
+						name="current"
+					/>
+				</div>
+				<div class="period-container">
+					<label class="amount" for="period"
+						>At what month do you want to reach your goal?</label
+					>
+					<input
+						class="goal__input"
+						type="text"
+						id="period"
+						name="period"
+					/>
+				</div>
+				<button id="goalBtn" class="add-goal" type="submit">Add</button>
+				<button id="cancel-goal" class="cancel-goal" type="button">
+					Cancel
+				</button>
+			</form>
+		</div>
+		<div id="hidden-card" class="card" style="visibility: hidden">
+			<form action="/updated" method="post">
+				<div class="card__container card__container--salary">
+					<label class="card__detail" for="salary"
+						><span class="card__detail-span">Salary</span>: $</label
+					>
+					<input
+						class="card__input card__input--salary"
+						type="number"
+						id="salary"
+						name="salary"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="housing">Housing: $</label>
+					<input
+						class="card__input card__input--housing"
+						type="number"
+						id="housing"
+						name="housing"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="utilities"
+						>Utilities: $</label
+					>
+					<input
+						class="card__input card__input--utilities"
+						type="number"
+						id="utilities"
+						name="utilities"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="transportation"
+						>Transportation: $</label
+					>
+					<input
+						class="card__input card__input--transportation"
+						type="number"
+						id="transportation"
+						name="transportation"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="food">Food: $</label>
+					<input
+						class="card__input card__input--food"
+						type="number"
+						id="food"
+						name="food"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="grocories"
+						>Grocories: $</label
+					>
+					<input
+						class="card__input card__input--grocories"
+						type="number"
+						id="grocories"
+						name="grocories"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="entertainment"
+						>Entertainment: $</label
+					>
+					<input
+						class="card__input card__input--entertainment"
+						type="number"
+						id="entertainment"
+						name="entertainment"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="healthcare"
+						>Healthcare: $</label
+					>
+					<input
+						class="card__input card__input--healthcare"
+						type="number"
+						id="healthcare"
+						name="healthcare"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="others">Others: $</label>
+					<input
+						class="card__input card__input--others"
+						type="number"
+						id="others"
+						name="others"
+					/>
+				</div>
+				<button class="card__btn card__btn--primary" type="submit">
+					Apply
+				</button>
+				<button
+					id="card-cancel-btn"
+					class="card__btn card__btn--secondary"
+					type="button"
+				>
+					Cancel
+				</button>
+			</form>
+		</div>
+			<div id="hiddenEditGoal" class="editGoal" style="visibility: hidden">
+			<form action="/edit-goals" method="post">
+				<div class="title-container">
+					<label class="title" for="title">Your goal name?</label>
+					<input
+						class="goal__input"
+						type="text"
+						id="title"
+						name="title"
+					/>
+				</div>
+				<div class="current-amount-container">
+					<label class="amount" for="current"
+						>How much you currently have saved up for your
+						goal?</label
+					>
+					<input
+						class="goal__input"
+						type="number"
+						id="current"
+						name="current"
+					/>
+				</div>
+				<div class="period-container">
+					<label class="amount" for="period"
+						>At what month do you want to reach your goal?</label
+					>
+					<input
+						class="goal__input"
+						type="text"
+						id="period"
+						name="period"
+					/>
+				</div>
+				<button id="goalBtn" class="add-goal" type="submit">Edit</button>
+				<button id="cancelEditGoal" class="cancel-goal" type="button">
+					Cancel
+				</button>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	width: 440px;
+	height: 695px;
+	padding: 0 44px;
+	border-radius: 10px;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	position: absolute;
+}
+
+.card__title {
+	font-size: 22px;
+	width: 500px;
+	margin-top: 36px;
+	transform: translateX(-29px);
+}
+
+.card__hidden-text {
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	color: red;
+	text-align: center;
+	width: 352px;
+	position: absolute;
+	top: 12.5%;
+}
+
+form > *:not(:first-child) {
+	margin-top: 28px;
+}
+
+.card__container--salary {
+	margin-top: 70px;
+}
+
+.card__detail {
+	font-size: 20px;
+}
+
+.card__detail-span {
+	font-weight: 900;
+}
+
+.card__input {
+	font-size: 14px;
+	font-weight: 500;
+	height: 27px;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	text-indent: 5px;
+}
+
+.card__input:focus {
+	outline: none;
+}
+
+.card__input--salary {
+	width: 253px;
+}
+
+.card__input--housing {
+	width: 239px;
+}
+
+.card__input--utilities {
+	width: 246px;
+}
+
+.card__input--transportation {
+	width: 178px;
+}
+
+.card__input--food {
+	width: 269px;
+}
+
+.card__input--grocories {
+	width: 225px;
+}
+
+.card__input--entertainment {
+	width: 183px;
+}
+
+.card__input--healthcare {
+	width: 213px;
+}
+
+.card__input--others {
+	width: 253px;
+}
+
+.card__btn {
+	font-size: 18px;
+	font-weight: 600;
+	color: white;
+	background-color: #2ba30e;
+	width: 353px;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px hsl(0, 0%, 0%, 25%);
+	cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}

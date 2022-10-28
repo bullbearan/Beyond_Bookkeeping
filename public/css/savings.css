@@ -1,0 +1,132 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.left {
+	width: 338px;
+	height: 120px;
+	padding-top: 27px;
+	border-radius: 8px;
+	margin-top: 56px;
+	margin-left: 500px;
+	box-shadow: 0 0 4px 1px hsl(0, 0%, 0%, 25%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.left__salary,
+.left__savings {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.right {
+	font-size: 20px;
+	width: 872px;
+	margin-left: 25px;
+	display: inline-block;
+}
+
+.bottom {
+	background-color: #f0f0f0;
+	width: 1440px;
+	height: 535px;
+	padding-bottom: 23px;
+	margin-top: 56px;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	overflow: auto;
+}
+
+.bottom__title {
+	font-size: 20px;
+	font-weight: 600;
+	margin-left: 78px;
+	margin-top: 23px;
+	display: inline-block;
+}
+
+.bottom__goal-container {
+	width: 1230px;
+	height: 102px;
+	margin-top: 40px;
+	margin-left: 78px;
+	display: flex;
+	align-items: center;
+}
+
+.bottom__goal {
+	background-color: white;
+	width: 347px;
+	height: 102px;
+	border-radius: 8px;
+	box-shadow: 0 0 5px hsl(0, 0%, 0%, 25%);
+}
+
+.goal__title {
+	font-size: 18px;
+	margin-top: 18px;
+	margin-left: 16px;
+}
+
+.goal__progress-outer {
+	width: 300px;
+	height: 12px;
+	border-radius: 5.5px;
+	margin-left: 11px;
+	margin-top: 8px;
+	margin-bottom: 12px;
+	box-shadow: 0 0 2px 1px hsl(0, 0%, 0%, 25%);
+	display: inline-block;
+}
+
+.goal__progress-outer {
+	width: 300px;
+	height: 12px;
+	border-radius: 5.5px;
+	margin-left: 11px;
+	margin-top: 8px;
+	margin-bottom: 12px;
+	box-shadow: 0 0 2px 1px hsl(0, 0%, 0%, 25%);
+	display: inline-block;
+	overflow: hidden;
+}
+
+.goal__progress-inner {
+	background-color: #2ba30e;
+	height: 6px;
+	margin: 2.5px 2px;
+	border-radius: 5.5px;
+}
+
+.goal__amount-container {
+	width: 300px;
+	height: 12px;
+	margin-left: 11px;
+	display: flex;
+	align-items: center;
+}
+
+.goal__curr {
+	font-size: 16px;
+	font-weight: 500;
+	margin-right: auto;
+}
+
+.goal__max {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.bottom__savings {
+	font-size: 18px;
+	margin-left: 11px;
+}

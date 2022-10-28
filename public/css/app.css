@@ -1,0 +1,196 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.app {
+	width: 1285px;
+	height: 506px;
+	margin: 80px auto 0;
+}
+
+.app__edit-salary-btn {
+	font-size: 16px;
+	font-weight: 500;
+	background-color: white;
+	width: 240px;
+	height: 48px;
+	border: 3px solid #2ba30e;
+	border-radius: 10px;
+	margin-left: 487px;
+	box-shadow: 0 2px 4px hsl(0, 0%, 0%, 25%);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.app__edit-salary-btn > svg {
+	margin-right: 5px;
+}
+
+.app__charts-and-goals-container {
+	width: 1285px;
+	height: 510px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.app__doughnut-chart-container {
+	width: 250px;
+	height: 250px;
+	margin-top: 179px;
+	display: inline-block;
+	position: relative;
+}
+
+.app__doughnut-amount {
+	font-size: 24px;
+	text-align: center;
+	width: 125px;
+	position: absolute;
+	top: 90px;
+	left: 60px;
+}
+
+.app__doughnut-total {
+	font-size: 16px;
+	text-align: center;
+	width: 125px;
+	position: absolute;
+	top: 130px;
+	left: 60px;
+}
+
+.app__bar-chart-container {
+	width: 496px;
+	height: 310px;
+	display: inline-block;
+	margin-top: 154px;
+}
+
+.app__expenses-catagories {
+	display: flex;
+	align-items: flex-end;
+}
+
+.app__expenses-category {
+	font-size: 16px;
+	margin-right: 6px;
+	display: inline-block;
+}
+
+.app__expenses-catagories > *:not(p) {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	margin-right: 32px;
+	display: inline-block;
+}
+
+.app__housing-color {
+	background-color: #ff2e7e;
+}
+
+.app__utilities-color {
+	background-color: #ff6b45;
+}
+
+.app__transportation-color {
+	background-color: #ffab05;
+}
+
+.app__food-color {
+	background-color: #e6ff69;
+}
+
+.app__grocories-color {
+	background-color: #2effaf;
+}
+
+.app__entertainment-color {
+	background-color: #0568ff;
+}
+
+.app__healthcare-color {
+	background-color: #6050dc;
+}
+
+.app__others-color {
+	background-color: #d52db7;
+}
+
+.app__goals-outer-container {
+	width: 403px;
+	height: 433px;
+	margin-top: 24px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.app__goals-text-and-btn-container {
+	width: 403px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+
+.app__goals-text {
+	font-size: 26px;
+	font-weight: 700;
+	margin-right: 11px;
+	display: inline-block;
+}
+
+.app__goals-btn {
+	background-color: white;
+	width: 120px;
+	height: 26px;
+	border-radius: 8.5px;
+	border: 2px solid #2ba30e;
+	box-shadow: 0 1px 4px hsl(0, 0%, 0%, 25%);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.app__goals-btn > svg {
+	margin-left: 9px;
+	margin-right: 7px;
+}
+
+.app__goals-inner-container {
+	background-color: #f0f0f0;
+	width: 403px;
+	height: 390px;
+	padding-bottom: 18px;
+	border-radius: 10px;
+	margin-top: 27px;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	overflow: auto;
+}
+
+.goal__edit {
+	background-color: white;
+	width: 120px;
+	height: 26px;
+	border: 2px solid #2ba30e;
+	border-radius: 8.5px;
+	margin-left: 9px;
+	margin-right: 7px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.goal__edit > svg {
+	margin-left: 9px;
+	margin-right: 7px;
+}

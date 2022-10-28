@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Beyond Bookkeeping</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/first_time_signing_up.css" />
+	</head>
+	<body>
+		<div class="card">
+			<h2 class="card__title">Please Enter your salary and expenses</h2>
+			<% if(status === "salary error") { %>
+			<p class="card__hidden-text">Please enter your salary</p>
+			<% } else if (status === "housing error") { %>
+			<p class="card__hidden-text">Please enter housing expenses</p>
+			<% } else if (status === "utilities error") { %>
+			<p class="card__hidden-text">Please enter utilities expenses</p>
+			<% } else if (status === "transportation error") { %>
+			<p class="card__hidden-text">
+				Please enter transportation expenses
+			</p>
+			<% } else if (status === "food error") { %>
+			<p class="card__hidden-text">Please enter food expenses</p>
+			<% } else if (status === "grocories error") { %>
+			<p class="card__hidden-text">Please enter grocories expenses</p>
+			<% } else if (status === "entertainment error") { %>
+			<p class="card__hidden-text">Please enter entertainment expenses</p>
+			<% } else if (status === "healthcare error") { %>
+			<p class="card__hidden-text">Please enter healthcare expenses</p>
+			<% } else if (status === "others error") { %>
+			<p class="card__hidden-text">Please enter others expenses</p>
+			<% } else if (status === "too high") { %>
+			<p class="card__hidden-text">You are spending more than you earn</p>
+			<% } %>
+			<form action="/Welcome-to-the-app" method="post">
+				<div class="card__container card__container--salary">
+					<label class="card__detail" for="salary"
+						><span class="card__detail-span">Salary</span>: $</label
+					>
+					<input
+						class="card__input card__input--salary"
+						type="number"
+						id="salary"
+						name="salary"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="housing">Housing: $</label>
+					<input
+						class="card__input card__input--housing"
+						type="number"
+						id="housing"
+						name="housing"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="utilities"
+						>Utilities: $</label
+					>
+					<input
+						class="card__input card__input--utilities"
+						type="number"
+						id="utilities"
+						name="utilities"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="transportation"
+						>Transportation: $</label
+					>
+					<input
+						class="card__input card__input--transportation"
+						type="number"
+						id="transportation"
+						name="transportation"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="food">Food: $</label>
+					<input
+						class="card__input card__input--food"
+						type="number"
+						id="food"
+						name="food"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="grocories"
+						>Grocories: $</label
+					>
+					<input
+						class="card__input card__input--grocories"
+						type="number"
+						id="grocories"
+						name="grocories"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="entertainment"
+						>Entertainment: $</label
+					>
+					<input
+						class="card__input card__input--entertainment"
+						type="number"
+						id="entertainment"
+						name="entertainment"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="healthcare"
+						>Healthcare: $</label
+					>
+					<input
+						class="card__input card__input--healthcare"
+						type="number"
+						id="healthcare"
+						name="healthcare"
+					/>
+				</div>
+				<div class="card__container">
+					<label class="card__detail" for="others">Others: $</label>
+					<input
+						class="card__input card__input--others"
+						type="number"
+						id="others"
+						name="others"
+					/>
+				</div>
+				<button class="card__btn" type="submit">Get Started</button>
+			</form>
+		</div>
+	</body>
+</html>

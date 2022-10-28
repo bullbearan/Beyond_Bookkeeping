@@ -1,0 +1,272 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.hidden-background {
+	width: 100vw;
+	height: 93vh;
+	background-color: hsl(0, 0%, 0%, 35%);
+	position: absolute;
+	z-index: 1;
+}
+
+.card {
+	background-color: white;
+	width: 530px;
+	height: 665px;
+	padding: 0 44px;
+	border-radius: 10px;
+	margin: auto;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.card__hidden-text {
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	color: red;
+	text-align: center;
+	width: 352px;
+	position: absolute;
+	top: 17.5%;
+}
+
+form > *:not(:first-child) {
+	margin-top: 28px;
+}
+
+.card__container--salary {
+	margin-top: 80px;
+}
+
+.card__detail {
+	font-size: 20px;
+}
+
+.card__detail-span {
+	font-weight: 900;
+}
+
+.card__input {
+	font-size: 14px;
+	font-weight: 500;
+	height: 27px;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	text-indent: 5px;
+}
+
+.card__input:focus {
+	outline: none;
+}
+
+.card__input--salary {
+	width: 253px;
+}
+
+.card__input--housing {
+	width: 239px;
+}
+
+.card__input--utilities {
+	width: 246px;
+}
+
+.card__input--transportation {
+	width: 178px;
+}
+
+.card__input--food {
+	width: 269px;
+}
+
+.card__input--grocories {
+	width: 225px;
+}
+
+.card__input--entertainment {
+	width: 183px;
+}
+
+.card__input--healthcare {
+	width: 213px;
+}
+
+.card__input--others {
+	width: 253px;
+}
+
+.card__btn {
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+	width: 165px;
+	height: 37px;
+	border: none;
+	border-radius: 10px;
+	margin-right: 17px;
+	box-shadow: 0 2px 6px hsl(0, 0%, 0%, 25%);
+	cursor: pointer;
+}
+
+.card__btn--primary {
+	background-color: #2ba30e;
+}
+
+.card__btn--secondary {
+	background-color: #ff2e7e;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.goal {
+	background-color: white;
+	width: 800px;
+	height: 500px;
+	padding: 0 44px;
+	border-radius: 10px;
+	margin: auto;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+}
+
+.title,
+.amount {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.title-container {
+	margin-top: 65px;
+}
+
+.goal__input {
+	font-size: 14px;
+	font-weight: 500;
+	width: 405px;
+	height: 27px;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	text-indent: 5px;
+}
+
+.add-goal,
+.cancel-goal {
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+	width: 80px;
+	height: 30px;
+	border: none;
+	border-radius: 10px;
+	margin-right: 17px;
+	box-shadow: 0 2px 6px hsl(0, 0%, 0%, 25%);
+	cursor: pointer;
+}
+
+.add-goal {
+	background-color: #2ba30e;
+}
+
+.cancel-goal {
+	background-color: #ff2e7e;
+}
+
+.goal-inside {
+	background-color: white;
+	width: 347px;
+	height: 102px;
+	border-radius: 8px;
+	margin-top: 18px;
+	margin-left: 19px;
+	box-shadow: 0 0 5px hsl(0, 0%, 0%, 25%);
+}
+
+.goal__title {
+	font-size: 18px;
+	margin-top: 18px;
+	margin-left: 16px;
+
+	display: inline-block;
+}
+
+.goal__progress-outer {
+	width: 300px;
+	height: 12px;
+	border-radius: 5.5px;
+	margin-left: 11px;
+	margin-top: 8px;
+	margin-bottom: 12px;
+	box-shadow: 0 0 2px 1px hsl(0, 0%, 0%, 25%);
+	overflow: hidden;
+	display: inline-block;
+}
+
+.goal__progress-inner {
+	background-color: #2ba30e;
+	height: 6px;
+	margin: 2.5px 2px;
+	border-radius: 5.5px;
+}
+
+.goal__amount-container {
+	width: 300px;
+	height: 12px;
+	margin-left: 11px;
+	display: flex;
+	align-items: center;
+}
+
+.goal__curr {
+	font-size: 16px;
+	font-weight: 500;
+	margin-right: auto;
+}
+
+.goal__max {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.con {
+	width: 323px;
+	display: flex;
+}
+
+.editGoal {
+	background-color: white;
+	width: 800px;
+	height: 400px;
+	padding: 0 44px;
+	border-radius: 10px;
+	margin: auto;
+	box-shadow: 0 0 7px hsl(0, 0%, 0%, 25%);
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+}

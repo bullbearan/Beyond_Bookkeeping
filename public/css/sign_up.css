@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	width: 560px;
+	height: 605px;
+	padding: 0 52px;
+	border-radius: 13.3px;
+	box-shadow: 0 0 4.45px hsl(0, 0%, 0%, 25%);
+	position: relative;
+}
+
+.card__title {
+	font-size: 23.85px;
+	font-weight: bold;
+	margin-top: 41px;
+}
+
+.card__hidden-text {
+	font-size: 14.5px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	color: red;
+	text-align: center;
+	width: 422px;
+	position: absolute;
+	top: 14%;
+}
+
+form > * {
+	margin-top: 27px;
+}
+
+.card__detail {
+	font-size: 15.5px;
+	font-weight: 500;
+	margin-bottom: 8px;
+	display: block;
+}
+
+.card__detail--username {
+	padding-top: 20px;
+}
+
+.card__input {
+	font-size: 16px;
+	font-weight: 500;
+	width: 426px;
+	height: 41px;
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0 0 6.2px hsl(0, 0%, 0%, 25%);
+	text-indent: 10px;
+}
+
+.card__user-name-input {
+	width: 204px;
+	margin-right: 18px;
+}
+
+.card__input::placeholder {
+	font-size: 14px;
+	color: #8c8c8c;
+}
+
+.card__input:focus {
+	outline: none;
+}
+
+.card__btn {
+	font-size: 17px;
+	font-weight: 600;
+	color: white;
+	background-color: #2ba30e;
+	width: 426px;
+	height: 37.25px;
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0 1.55px 4.66px hsl(0, 0%, 0%, 25%);
+	cursor: pointer;
+}
+
+.card__text {
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 18px;
+}
+
+.card__log-in {
+	color: #2ba30e;
+	text-decoration: none;
+}
